@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <h:outputStylesheet name="css/material.min.css"></h:outputStylesheet>
+    <h:outputScript name="css/material.min.js"></h:outputScript>
+    <title>
+        Coffee Maker 2
+    </title>
+</h:head>
+<h:body>
+    <f:view>
+        <div class="mdl-grid">
+            <div class="mdl-cell--12-col">
+                <h1>Alarm Hinzufügen</h1>
+            </div>
+            <h:form>
+                <div class="mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <!--<input class="mdl-textfield__input" type="text" id="name"/>-->
+                        <h:inputText styleClass="mdl-textfield__input" id="name" value="#{addAlarm.name}"></h:inputText>
+                        <label class="mdl-textfield__label" for="name">Name</label>
+                    </div>
+                </div>
+                <div class="mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <!--<textarea class="mdl-textfield__input" type="text" rows= "3" id="description"></textarea>-->
+                        <h:inputTextarea styleClass="mdl-textfield__input" rows="3" id="description" value="#{addAlarm.description}"></h:inputTextarea>
+                        <label class="mdl-textfield__label" for="description">Beschreibung</label>
+                    </div>
+                </div>
+                <div class="mdl-cell--12-col">
+                    <h:commandButton styleClass="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"
+                        value="Speichern" action="#{addAlarm.save()}"></h:commandButton>
+                    <h:commandButton styleClass="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"
+                                     value="Zurück" action="#{addAlarm.back()}"></h:commandButton>
+                </div>
+            </h:form>
+        </div>
+    </f:view>
+
+    <!--<h:outputScript>-->
+        <!--componentHandler.upgradeElements(document.getElementsByTagName("*"));-->
+    <!--</h:outputScript>-->
+</h:body>
+</html>
